@@ -50,7 +50,7 @@
           <span class="avatar rounded-circle thumb-sm float-left mr-2">
             <img class="rounded-circle" src="../../assets/people/a5.jpg" alt="..." />
           </span>
-          <span class="small">Philip Smith</span>
+          <span class="small">{{userName}}</span>
           <span class="ml-1 circle bg-primary text-white fw-bold"></span>
         </template>
       </b-nav-item-dropdown>
@@ -71,12 +71,19 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'Header',
   computed: {
     ...mapState('layout', ['sidebarClose', 'sidebarStatic']),
+    ...mapGetters('auth', ['user']),
+    userName(){
+      if (this.user) {
+        return this.user.name;
+      }
+      return '';
+    },
   },
   methods: {
     ...mapActions('layout', ['toggleSidebar', 'switchSidebar', 'changeSidebarActive']),

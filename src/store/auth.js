@@ -30,10 +30,15 @@ export default {
 
     actions: {
         async signIn ({ dispatch }, credentials) {
-          /*await axios.get('/sanctum/csrf-cookie')
-          await axios.post('/login', credentials)*/
-
-          return dispatch('me')
+          await axios.post('api/login', credentials).then((response) => {
+            if (response.data.code == 200) {
+                dispatch('me', response.data);
+            } else {
+                dispatch('meOut');
+            }
+          }).catch(()=>{
+            dispatch('meOut');
+          });
         },
 
         async signOut ({ dispatch }) {
@@ -42,20 +47,9 @@ export default {
           return dispatch('meOut');
         },
 
-        me ({ commit }) {
+        me ({ commit }, data) {
             commit('SET_AUTHENTICATED', true)
-            commit('SET_USER', {
-                id:1,
-                name:'Admin',
-                email:'admin@gmail.com'
-            })
-          /*return axios.get('/api/user').then((response) => {
-            commit('SET_AUTHENTICATED', true)
-            commit('SET_USER', response.data)
-          }).catch(() => {
-            commit('SET_AUTHENTICATED', false)
-            commit('SET_USER', null)
-          })*/
+            commit('SET_USER', data.results)
         },
 
         meOut({ commit }) {

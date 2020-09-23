@@ -18,8 +18,8 @@ import Widget from './components/Widget/Widget';
 
 window.axios = axios;
 let baseUrl = process.env.NODE_ENV === 'production' ? 'http://localhost:8000/' : 'http://localhost:8000/';
-axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-axios.defaults.withCredentials = true;
+//axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+//axios.defaults.withCredentials = true;
 axios.defaults.baseURL = baseUrl;
 
 Vue.use(BootstrapVue);

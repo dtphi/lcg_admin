@@ -26,7 +26,7 @@ export default {
       });
     }
 
-    if (currentPath === '/') {
+    if (currentPath === '/' && this.authenticated == true) {
       this.$router.push('/dashboard');
     }
   },
