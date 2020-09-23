@@ -16,6 +16,7 @@
     "bootstrap": "^4.5.0",
     "bootstrap-vue": "2.15.0",
     "css-loader": "^1.0.1",
+    "dotenv": "^8.2.0",
     "echarts": "^4.8.0",
     "expose-loader": "^0.7.5",
     "font-awesome": "4.7.0",

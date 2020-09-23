@@ -6,7 +6,12 @@
         @mouseleave="sidebarMouseLeave"
     >
       <header class="logo">
-        <router-link to="/dashboard"><span class="primary-word">Admin</span> Lịch Công Giáo</router-link>
+          <router-link to="/dashboard">
+          <span class="primary-word">Admin</span> 
+          <span class="primary-word">
+            <img style="width:50%" alt="Vue logo" :src="cfApp.logoPath">
+          </span>
+        </router-link>
       </header>
       <ul class="nav">
         <NavLink
@@ -79,6 +84,7 @@ export default {
       sidebarOpened: state => !state.sidebarClose,
       activeItem: state => state.sidebarActiveElement,
     }),
+    ...mapState(['cfApp']),
   },
 };
 </script>

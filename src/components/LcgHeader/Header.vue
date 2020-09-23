@@ -48,7 +48,7 @@
         right>
         <template slot="button-content">
           <span class="avatar rounded-circle thumb-sm float-left mr-2">
-            <img class="rounded-circle" src="../../assets/people/a5.jpg" alt="..." />
+            <img class="rounded-circle" :src="cfApp.logoPath" alt="..." />
           </span>
           <span class="small">{{userName}}</span>
           <span class="ml-1 circle bg-primary text-white fw-bold"></span>
@@ -77,6 +77,7 @@ export default {
   name: 'Header',
   computed: {
     ...mapState('layout', ['sidebarClose', 'sidebarStatic']),
+    ...mapState(['cfApp']),
     ...mapGetters('auth', ['user']),
     userName(){
       if (this.user) {
