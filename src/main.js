@@ -17,9 +17,9 @@ import layoutMixin from './mixins/layout';
 import Widget from './components/Widget/Widget';
 
 window.axios = axios;
-let baseUrl = process.env.NODE_ENV === 'production' ? 'http://localhost:8000/' : 'http://localhost:8000/';
-//axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-//axios.defaults.withCredentials = true;
+let baseUrl = process.env.VUE_APP_BASE_URI;
+axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.withCredentials = true;// set session cookies.
 axios.defaults.baseURL = baseUrl;
 
 Vue.use(BootstrapVue);
@@ -37,10 +37,12 @@ Vue.use(Toasted, {duration: 10000});
 
 Vue.config.productionTip = false;
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  store,
-  router,
-  render: h => h(App),
-});
+store.dispatch('auth/me').then(() => {
+  /* eslint-disable no-new */
+	new Vue({
+	  el: '#app',
+	  store,
+	  router,
+	  render: h => h(App),
+	});
+})
