@@ -19,6 +19,7 @@ import Widget from './components/Widget/Widget';
 window.axios = axios;
 let baseUrl = process.env.VUE_APP_BASE_URI;
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.headers.common['Content-Type'] = 'application/json';
 axios.defaults.withCredentials = true;// set session cookies.
 axios.defaults.baseURL = baseUrl;
 
@@ -38,11 +39,10 @@ Vue.use(Toasted, {duration: 10000});
 Vue.config.productionTip = false;
 
 store.dispatch('auth/me').then(() => {
-  /* eslint-disable no-new */
 	new Vue({
-	  el: '#app',
-	  store,
-	  router,
-	  render: h => h(App),
+    el: '#app',
+    store,
+    router,
+    render: h => h(App),
 	});
 })

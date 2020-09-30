@@ -3,7 +3,6 @@ import Router from 'vue-router';
 
 import Layout from '@/components/Layout/Layout';
 import LayoutAdmin from '@/components/LcgLayout/Layout';
-import Login from '@/pages/Login/Login';
 import AdminLogin from '@/pages/LcgLogin/Login';
 import ErrorPage from '@/pages/Error/Error';
 // Core
@@ -18,6 +17,7 @@ import GoogleMapPage from '@/pages/Maps/Google';
 // Main
 import AnalyticsPage from '@/pages/Dashboard/Dashboard';
 import AdminDashBoard from '@/pages/LcgDashboard/Dashboard';
+import LcgUserPage from '@/pages/LcgUser/User';
 
 // Charts
 import ChartsPage from '@/pages/Charts/Charts';
@@ -50,6 +50,11 @@ export default new Router({
                     path: 'dashboard',
                     name: 'DashBoardPage',
                     component: AdminDashBoard,
+                },
+                {
+                    path: 'user',
+                    name: 'UserPage',
+                    component: LcgUserPage,
                 }
             ],
         },

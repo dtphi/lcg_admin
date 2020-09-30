@@ -114,9 +114,7 @@ export default {
     async submit () {
       await this.signOut();
 
-      this.$router.push('/login').catch(()=>{
-        console.log('logout');
-      });
+      this.$router.push('/login').catch(()=>{});
     },
     logout() {
         this.submit();

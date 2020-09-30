@@ -2,20 +2,17 @@ import axios from 'axios'
 
 export default {
     namespaced: true,
-
     state: {
-        authenticated: false,
-        user: null
+      authenticated: false,
+      user: null
     },
-
     getters: {
-        authenticated(state) {
-            return state.authenticated
-        },
-
-        user(state) {
-            return state.user
-        },
+      authenticated(state) {
+        return state.authenticated
+      },
+      user(state) {
+        return state.user
+      },
     },
 
     mutations: {
@@ -30,10 +27,10 @@ export default {
 
     actions: {
         async signIn ({ dispatch }, credentials) {
-        	await axios.get('/sanctum/csrf-cookie')
-          await axios.post('/api/login', credentials)
+            await axios.get('/sanctum/csrf-cookie');
+            await axios.post('/api/login', credentials);
 
-      		return dispatch('me')
+            return dispatch('me')
         },
 
         async signOut ({ dispatch }) {
@@ -42,14 +39,14 @@ export default {
           return dispatch('me');
         },
 
-        me ({ commit }, data) {
+        me ({ commit }) {
             return axios.get('/api/user').then((response) => {
-			        commit('SET_AUTHENTICATED', true)
-			        commit('SET_USER', response.data)
-			      }).catch(() => {
-			        commit('SET_AUTHENTICATED', false)
-			        commit('SET_USER', null)
-			      })
+                commit('SET_AUTHENTICATED', true);
+                commit('SET_USER', response.data);
+            }).catch(() => {
+                commit('SET_AUTHENTICATED', false);
+                commit('SET_USER', null);
+            })
         }
     }
 }

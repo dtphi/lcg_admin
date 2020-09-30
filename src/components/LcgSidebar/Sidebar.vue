@@ -22,6 +22,14 @@
             index="dashboard"
             isHeader
         />
+        <NavLink
+            :activeItem="activeItem"
+            header="User"
+            link="/user"
+            iconName="flaticon-equal-1"
+            index="user"
+            isHeader
+        />
       </ul>
     </nav>
   </div>

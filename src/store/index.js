@@ -9,19 +9,17 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 		state: {
-	    cfApp: rs
-	  },
-	  getters: {
-	    cfApp(state) {console.log(state)
-	      return state.cfApp
-	    }
-	  },
-	  mutations: {
-	  },
-	  actions: {
-	  },
+			cfApp: rs
+		},
+		getters: {
+			cfApp(state) {
+				return state.cfApp;
+			}
+		},
+    mutations: {},
+    actions: {},
     modules: {
-        auth,
-        layout,
+      auth,
+      layout,
     },
 });

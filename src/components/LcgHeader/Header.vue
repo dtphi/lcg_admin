@@ -117,7 +117,6 @@ export default {
       await this.signOut();
 
       this.$router.push('/login').catch(()=>{
-        console.log('logout');
       });
     },
     logout() {

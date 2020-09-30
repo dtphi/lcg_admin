@@ -13,7 +13,6 @@ export default {
   updated() {
     if (this.authenticated == false) {
       this.$router.push('/login').catch(()=>{
-        console.log('updated');
       });
     }
   },
@@ -22,7 +21,6 @@ export default {
 
     if (this.authenticated == false) {
       this.$router.push('/login').catch(()=>{
-        console.log('created');
       });
     }
 
