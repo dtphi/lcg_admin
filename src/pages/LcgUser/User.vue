@@ -21,7 +21,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="row in tableStyles" :key="row.id">
+                <tr v-for="row in lists" :key="row.id">
                   <td>{{row.id}}</td>
                   <td>
                     <img class="img-rounded" :src="row.picture" alt="" height="50" />
@@ -83,19 +83,14 @@
 
 <script>
 import Vue from 'vue';
+import {mapGetters, mapActions} from 'vuex';
 import Widget from '@/components/Widget/Widget';
 import Sparklines from '../../components/Sparklines/Sparklines'
-
-export default {
-  name: 'User',
-  components: { Widget, Sparklines },
-  data() {
-    return {
-      tableStyles: [
+let jsonTest = [
         {
           id: 1,
           picture: require('../../assets/tables/1.jpg'), // eslint-disable-line global-require
-          description: 'Palo Alto',
+          description: 'Admin',
           info: {
             type: 'JPEG',
             dimensions: '200x150',
@@ -112,7 +107,7 @@ export default {
           picture: require('../../assets/tables/2.jpg'), // eslint-disable-line global-require
           description: 'The Sky',
           info: {
-            type: 'PSD',
+            type: 'Member',
             dimensions: '2400x1455',
           },
           date: new Date('November 14, 2012'),
@@ -125,7 +120,7 @@ export default {
         {
           id: 3,
           picture: require('../../assets/tables/3.jpg'), // eslint-disable-line global-require
-          description: 'Down the road',
+          description: 'Test',
           label: {
             colorClass: 'danger',
             text: 'INFO!',
@@ -144,7 +139,7 @@ export default {
         {
           id: 4,
           picture: require('../../assets/tables/4.jpg'), // eslint-disable-line global-require
-          description: 'The Edge',
+          description: 'Test',
           info: {
             type: 'PNG',
             dimensions: '210x160',
@@ -171,13 +166,27 @@ export default {
             colorClass: 'primary',
           },
         },
-      ],
+      ];
+export default {
+  name: 'User',
+  beforeCreate() {
+    this.$store.dispatch('user/getUsers',jsonTest);
+  },
+  components: { Widget, Sparklines },
+  data() {
+    return {
       checkboxes1: [false, false, false, false],
       checkboxes2: [false, false, false, false, false, false],
       checkboxes3: [false, false, false, false, false, false],
     };
   },
+  computed: {
+      ...mapGetters('user', ['lists'])
+  },
   methods: {
+    ...mapActions({
+      userList: 'user/getUsers'
+    }),
     parseDate(date) {
       const dateSet = date.toDateString().split(' ');
       return `${date.toLocaleString('en-us', { month: 'long' })} ${dateSet[2]}, ${dateSet[3]}`;
