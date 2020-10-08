@@ -1,62 +1,40 @@
 <template>
   <div class="tables-basic">
-    <h2 class="page-title">Tables - <span class="fw-semi-bold">Static</span></h2>
+    <h2 class="page-title">Quảng lý - <span class="fw-semi-bold">Người dùng</span></h2>
     <b-row>
       <b-col>
         <Widget
-          title="<h5>Table <span class='fw-semi-bold'>Styles</span></h5>"
+          title="<h5>Danh sách <span class='fw-semi-bold'>Người dùng</span></h5>"
           customHeader settings close
         >
           <div class="table-resposive">
             <table class="table">
               <thead>
                 <tr>
-                  <th class="hidden-sm-down">#</th>
-                  <th>Picture</th>
-                  <th>Description</th>
-                  <th class="hidden-sm-down">Info</th>
-                  <th class="hidden-sm-down">Date</th>
-                  <th class="hidden-sm-down">Size</th>
-                  <th class="hidden-sm-down">Status</th>
+                  <th><input type="checkbox" v-model="checkAll"/></th>
+                  <th class="hidden-sm-down">Stt</th>
+                  <th>Tên</th>
+                  <th>Email</th>
+                  <th class="hidden-sm-down">Ngày tháng</th>
+                  <th class="hidden-sm-down">Thao tác</th>
                 </tr>
               </thead>
               <tbody>
                 <tr v-for="row in lists" :key="row.id">
+                  <td><input type="checkbox" :value="row.id" :id="row.id" v-model="checked" /></td>
                   <td>{{row.id}}</td>
                   <td>
-                    <img class="img-rounded" :src="row.picture" alt="" height="50" />
+                    {{row.name}}
                   </td>
                   <td>
-                    {{row.description}}
-                    <div v-if="row.label">
-                      <b-badge :variant="row.label.colorClass">{{row.label.text}}</b-badge>
-                    </div>
-                  </td>
-                  <td>
-                    <p class="mb-0">
-                      <small>
-                        <span class="fw-semi-bold">Type:</span>
-                        <span class="text-muted">&nbsp; {{row.info.type}}</span>
-                      </small>
-                    </p>
-                    <p>
-                      <small>
-                        <span class="fw-semi-bold">Dimensions:</span>
-                        <span class="text-muted">&nbsp; {{row.info.dimensions}}</span>
-                      </small>
-                    </p>
+                    {{row.email}}
                   </td>
                   <td class="text-semi-muted">
-                    {{parseDate(row.date)}}
-                  </td>
-                  <td class="text-semi-muted">
-                    {{row.size}}
+                    {{row.created_at}}
                   </td>
                   <td class="width-150">
-                    <b-progress
-                      :variant="row.progress.colorClass" :value="row.progress.percent" :max="100"
-                      class="progress-sm mb-xs"
-                    />
+                    <button>Sửa</button>
+                    <button>Xóa</button>
                   </td>
                 </tr>
               </tbody>
@@ -170,18 +148,35 @@ let jsonTest = [
 export default {
   name: 'User',
   beforeCreate() {
-    this.$store.dispatch('user/getUsers',jsonTest);
+    this.$store.dispatch('user/getUsers',[]);
   },
   components: { Widget, Sparklines },
   data() {
     return {
+      checked:[],
+      checkedAll: false,
       checkboxes1: [false, false, false, false],
       checkboxes2: [false, false, false, false, false, false],
       checkboxes3: [false, false, false, false, false, false],
     };
   },
   computed: {
-      ...mapGetters('user', ['lists'])
+      ...mapGetters('user', ['lists']),
+      checkAll: {
+        get () {
+          this.checkedAll = (this.checked.length === this.lists.length);
+
+          return this.checkedAll;
+        },
+        set (value) {
+          this.checked = []
+          if (value && this.lists) {
+            this.lists.forEach((user) => {
+              this.checked.push(user.id)
+            })
+          }
+        }
+      },
   },
   methods: {
     ...mapActions({

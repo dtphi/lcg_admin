@@ -21,10 +21,13 @@ export default {
     actions: {
         async getUsers ({ dispatch, commit }, searchs) {
             await axios.get('/api/users', searchs).then(response => {
-              console.log(dispatch)
-              console.log(response)
+              var status = response.status;
+              var errors = response.data.errors;
+
+              if (status == 200) {
+                commit('SET_LIST', response.data.results.user);
+              }
             });
-            commit('SET_LIST', searchs);
         }
     }
 }
