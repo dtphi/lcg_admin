@@ -4,7 +4,7 @@
     <b-row>
       <b-col>
         <Widget
-          title="<h5>Danh sách <span class='fw-semi-bold'>Người dùng</span></h5>"
+          title="<h5>Danh sách <span class='fw-semi-bold'>{{$options.txtMsg.formTitle}}</span></h5>"
           customHeader settings close
         >
           <div class="table-resposive">
@@ -12,11 +12,11 @@
               <thead>
                 <tr>
                   <th><input type="checkbox" v-model="checkAll"/></th>
-                  <th class="hidden-sm-down">Stt</th>
-                  <th>Tên</th>
-                  <th>Email</th>
-                  <th class="hidden-sm-down">Ngày tháng</th>
-                  <th class="hidden-sm-down">Thao tác</th>
+                  <th class="hidden-sm-down">{{$options.txtMsg.thSttTitle}}</th>
+                  <th>{{$options.txtMsg.thNameTitle}}</th>
+                  <th>{{$options.txtMsg.thEmailTitle}}</th>
+                  <th class="hidden-sm-down">{{$options.txtMsg.thDateTitle}}</th>
+                  <th class="hidden-sm-down">{{$options.txtMsg.thActionTitle}}</th>
                 </tr>
               </thead>
               <tbody>
@@ -211,6 +211,14 @@ export default {
       return {colors: [colors[Math.floor(Math.random() * colors.length)]]}
     }
   },
+  txtMsg: {
+    formTitle : 'Người dùng',
+    thSttTitle: 'Stt',
+    thNameTitle: 'Tên',
+    thEmailTitle: 'Email',
+    thDateTitle: 'Ngày tháng',
+    thActionTitle: 'Thao tác'
+  }
 };
 </script>
 
