@@ -4,14 +4,12 @@
     <b-row>
       <b-col>
         <Widget
-          title="<h5>Danh sách <span class='fw-semi-bold'>{{$options.txtMsg.formTitle}}</span></h5>"
-          customHeader settings close
-        >
+          title="<h5>Danh sách <span class='fw-semi-bold'>Người dùng</span></h5>" customHeader settings close>
           <div class="table-resposive">
             <table class="table">
               <thead>
                 <tr>
-                  <th><input type="checkbox" v-model="checkAll"/></th>
+                  <th><input type="checkbox" v-model="checkAllList"/></th>
                   <th class="hidden-sm-down">{{$options.txtMsg.thSttTitle}}</th>
                   <th>{{$options.txtMsg.thNameTitle}}</th>
                   <th>{{$options.txtMsg.thEmailTitle}}</th>
@@ -64,87 +62,7 @@ import Vue from 'vue';
 import {mapGetters, mapActions} from 'vuex';
 import Widget from '@/components/Widget/Widget';
 import Sparklines from '../../components/Sparklines/Sparklines'
-let jsonTest = [
-        {
-          id: 1,
-          picture: require('../../assets/tables/1.jpg'), // eslint-disable-line global-require
-          description: 'Admin',
-          info: {
-            type: 'JPEG',
-            dimensions: '200x150',
-          },
-          date: new Date('September 14, 2012'),
-          size: '45.6 KB',
-          progress: {
-            percent: 29,
-            colorClass: 'success',
-          },
-        },
-        {
-          id: 2,
-          picture: require('../../assets/tables/2.jpg'), // eslint-disable-line global-require
-          description: 'The Sky',
-          info: {
-            type: 'Member',
-            dimensions: '2400x1455',
-          },
-          date: new Date('November 14, 2012'),
-          size: '15.3 MB',
-          progress: {
-            percent: 33,
-            colorClass: 'warning',
-          },
-        },
-        {
-          id: 3,
-          picture: require('../../assets/tables/3.jpg'), // eslint-disable-line global-require
-          description: 'Test',
-          label: {
-            colorClass: 'danger',
-            text: 'INFO!',
-          },
-          info: {
-            type: 'JPEG',
-            dimensions: '200x150',
-          },
-          date: new Date('September 14, 2012'),
-          size: '49.0 KB',
-          progress: {
-            percent: 38,
-            colorClass: 'inverse',
-          },
-        },
-        {
-          id: 4,
-          picture: require('../../assets/tables/4.jpg'), // eslint-disable-line global-require
-          description: 'Test',
-          info: {
-            type: 'PNG',
-            dimensions: '210x160',
-          },
-          date: new Date('September 15, 2012'),
-          size: '69.1 KB',
-          progress: {
-            percent: 17,
-            colorClass: 'danger',
-          },
-        },
-        {
-          id: 5,
-          picture: require('../../assets/tables/5.jpg'), // eslint-disable-line global-require
-          description: 'Fortress',
-          info: {
-            type: 'JPEG',
-            dimensions: '1452x1320',
-          },
-          date: new Date('October 1, 2012'),
-          size: '2.3 MB',
-          progress: {
-            percent: 41,
-            colorClass: 'primary',
-          },
-        },
-      ];
+
 export default {
   name: 'User',
   beforeCreate() {
@@ -162,10 +80,8 @@ export default {
   },
   computed: {
       ...mapGetters('user', ['lists']),
-      checkAll: {
+      checkAllList: {
         get () {
-          this.checkedAll = (this.checked.length === this.lists.length);
-
           return this.checkedAll;
         },
         set (value) {
@@ -175,6 +91,7 @@ export default {
               this.checked.push(user.id)
             })
           }
+          this.checkedAll = (this.checked.length === this.lists.length);
         }
       },
   },
