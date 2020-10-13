@@ -5,6 +5,7 @@ export default {
     state: {
       lists:[],
       user:{},
+      errors:[]
     },
     getters: {
       lists(state) {
@@ -15,17 +16,21 @@ export default {
     mutations: {
       SET_LIST(state, lists) {
         state.lists = lists;
+      },
+      SET_ERRORS(state, errors) {
+        state.errors = errors;
       }
     },
 
     actions: {
-        async getUsers ({ dispatch, commit }, searchs) {
+        async getUsers ({ commit }, searchs) {
             await axios.get('/api/users', searchs).then(response => {
               var status = response.status;
               var errors = response.data.errors;
 
               if (status == 200) {
                 commit('SET_LIST', response.data.results.user);
+                commit('SET_ERRORS', errors);
               }
             });
         }
