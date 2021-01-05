@@ -709,6 +709,11 @@
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
 
+"@types/uuid@^8.0.0":
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.0.tgz#215c231dff736d5ba92410e6d602050cce7e273f"
+  integrity sha512-eQ9qFW/fhfGJF8WKHGEHZEyVWfZxrT+6CLIJGBcZPfxUh/+BnEj+UCGYMlr9qZuX/2AltsvwrGqp0LhEW8D0zQ==
+
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@vue/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-1.0.0.tgz#048fe579958da408fb7a8b2a3ec050b50a661040"
@@ -3128,6 +3133,11 @@ faye-websocket@~0.11.1:
   resolved "https://registry.yarnpkg.com/faye-websocket/-/faye-websocket-0.11.3.tgz#5c0e9a8968e8912c286639fde977a8b209f2508e"
   dependencies:
     websocket-driver ">=0.5.1"
+
+feature-toggle-api@^3.3.3:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/feature-toggle-api/-/feature-toggle-api-3.3.3.tgz#edee541309c5b7374530245423da7cb70a5f790c"
+  integrity sha512-lqZfBph8/ZBXWhx/GWvqzghsf8wzT/1i0jn0uyIY4K51frss6Cj1jLoBHylIsKfuAvsw57sB5Ef4DiQnQ27tpA==
 
 figgy-pudding@^3.5.1:
   version "3.5.1"
@@ -6594,6 +6604,11 @@ sort-keys@^1.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
+sortablejs@1.10.2:
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.10.2.tgz#6e40364d913f98b85a14f6678f92b5c1221f5290"
+  integrity sha512-YkPGufevysvfwn5rfdlGyrGjt7/CRHwvRPogD/lC+TnvcN29jDpCifKP+rBqf+LRldfXSTh+0CGLcSg0VIxq3A==
+
 source-list-map@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-2.0.1.tgz#3993bd873bfc48479cca9ea3a547835c7c154b34"
@@ -7355,6 +7370,21 @@ uuid@^3.0.1, uuid@^3.3.2:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
 
+uuid@^8.1.0:
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.1.tgz#2ba2e6ca000da60fce5a196954ab241131e05a31"
+  integrity sha512-FOmRr+FmWEIG8uhZv6C2bTgEVXsHk08kE7mPlrBbEe+c3r9pjceVPgupIfNIhc4yx55H69OXANrUaSuu9eInKg==
+
+v-click-outside@^2.1.3:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/v-click-outside/-/v-click-outside-2.1.5.tgz#aa69172fb41fcc79b26b9a4bc72a30ccf03f7a3c"
+  integrity sha512-VPNCOTZK6WZy73lcWc+R7IW1uaBFEO3/Csrs5CzWVOdvE30V8Y1+BE/BtTlcEmeDGx0eqdE7bSCg55Jj37PMJg==
+
+v-mask@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/v-mask/-/v-mask-2.2.3.tgz#a8427ddb94cb0ebdfcaa996e84ca7aeda0d4b707"
+  integrity sha512-as00PjW8pC9fmub4y5DqO7Wg6wCIM6fddRk7rykZ6u3C7Zs/iDi/9vnssVkQCZY1o7DTjfK8jlLy0E+Nz4D+mg==
+
 v8-compile-cache@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.1.1.tgz#54bc3cdd43317bca91e35dcaf305b1a7237de745"
@@ -7396,6 +7426,11 @@ vue-apexcharts@^1.6.0:
   resolved "https://registry.yarnpkg.com/vue-apexcharts/-/vue-apexcharts-1.6.0.tgz#c7d3afd93f712433d404e5ceeb4e3aa65f422af2"
   integrity sha512-sT6tuVTLBwfH3TA7azecDNS/W70bmz14ZJI7aE7QIqcG9I6OywyH7x3hcOeY1v1DxttI8Svc5RuYj4Dd+A5F4g==
 
+vue-async-computed@^3.9.0:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/vue-async-computed/-/vue-async-computed-3.9.0.tgz#af3181c25168bfe9d86d8ffbc7033bf9e484fe84"
+  integrity sha512-ac6m/9zxHHNGGKNOU1en8qNk+fAmEbJLuWL7qyQTFuH3vjv3V4urv//QHcVzCobROM6btnaDG2b+XYMncF/ETA==
+
 vue-echarts@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/vue-echarts/-/vue-echarts-4.1.0.tgz#ff4828aaa599e7aaaac95e35297d964192a3af0d"
@@ -7415,6 +7450,13 @@ vue-eslint-parser@^2.0.3:
     esquery "^1.0.0"
     lodash "^4.17.4"
 
+vue-feature-toggle@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/vue-feature-toggle/-/vue-feature-toggle-1.1.6.tgz#4e6ba4a6851beefac251221b030efb1f8f64b4ae"
+  integrity sha512-EvMbfHu31uL+aajaA2nmZvgvY7MiWDSlPAMqqIaKI8dtDfrinMAazmMXjNriJXI07/Te7eLl6rS1rhXUeBo0jg==
+  dependencies:
+    feature-toggle-api "^3.3.3"
+
 vue-functional-data-merge@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/vue-functional-data-merge/-/vue-functional-data-merge-3.1.0.tgz#08a7797583b7f35680587f8a1d51d729aa1dc657"
@@ -7433,10 +7475,29 @@ vue-loader@^15.7.0:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-notification@^1.3.20:
+  version "1.3.20"
+  resolved "https://registry.yarnpkg.com/vue-notification/-/vue-notification-1.3.20.tgz#d85618127763b46f3e25b8962b857947d5a97cbe"
+  integrity sha512-vPj67Ah72p8xvtyVE8emfadqVWguOScAjt6OJDEUdcW5hW189NsqvfkOrctxHUUO9UYl9cTbIkzAEcPnHu+zBQ==
+
 vue-router@^3.3.4:
   version "3.3.4"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.3.4.tgz#4e38abc34a11c41b6c3d8244449a2e363ba6250b"
   integrity sha512-SdKRBeoXUjaZ9R/8AyxsdTqkOfMcI5tWxPZOUX5Ie1BTL5rPSZ0O++pbiZCeYeythiZIdLEfkDiQPKIaWk5hDg==
+
+vue-simple-context-menu@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/vue-simple-context-menu/-/vue-simple-context-menu-3.3.2.tgz#fe65cfedb83010922c7ca6fd26d3275ad8dc63e9"
+  integrity sha512-q/HqHUz2eQ++fERjPysuYv3oRhr5anv4ZapaP4Ih3aHeUVpQ9fF+7zmDl05wzeBcfwNeJMvmLuvDsFIVkxWSxA==
+  dependencies:
+    v-click-outside "^2.1.3"
+
+vue-stripe-menu@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/vue-stripe-menu/-/vue-stripe-menu-1.4.0.tgz#a89f5f516d6a775941cf36dc20a64f758fda7290"
+  integrity sha512-FQ6+NQ27pZllD1TNi64OJycmAHLKAhlil3j4Vh7XBMHmQMf/MXdrz38WGXv0oz7FCHGW8my4TJnOUdXSYL4Y/g==
+  dependencies:
+    vue "^2.6.12"
 
 vue-style-loader@^4.1.0:
   version "4.1.2"
@@ -7470,6 +7531,19 @@ vue-touch@2.0.0-beta.4:
     rollup-plugin-commonjs "^7.0.0"
     rollup-plugin-node-resolve "^2.0.0"
 
+vue-uuid@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/vue-uuid/-/vue-uuid-2.0.2.tgz#0cfb739e660a3af1d4e3342743578114f79b2438"
+  integrity sha512-PRf1CHg3uKi77bVRyAuW2u/T2PO9LxMr7cw9t9rNdpZTkNDyw1Fx6eJVL+8JOtM9VxxPkoZ/rwhXJ5l+X5AYzQ==
+  dependencies:
+    "@types/uuid" "^8.0.0"
+    uuid "^8.1.0"
+
+vue-virtual-scroll-list@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/vue-virtual-scroll-list/-/vue-virtual-scroll-list-2.3.1.tgz#c2f3de022054626c13feb64f0d80154db9dbb22f"
+  integrity sha512-2p0bvcmUIMet5tln+cOKt/XjNvgP+ebq9bBD+gquK2rivsSSAFHeqQidzMO3wPFfxWeTB1JpoSzkyL9nzZ9yfA==
+
 vue2-google-maps@^0.10.7:
   version "0.10.7"
   resolved "https://registry.yarnpkg.com/vue2-google-maps/-/vue2-google-maps-0.10.7.tgz#2e4c1239386001bd47777d8c6a0475e5320cc3a8"
@@ -7482,6 +7556,18 @@ vue@^2.6.11:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
   integrity sha512-VfPwgcGABbGAue9+sfrD4PuwFar7gPb1yl1UK1MwXoQPAw0BKSqWfoYCT/ThFrdEVWoI51dBuyCoiNU9bZDZxQ==
+
+vue@^2.6.12:
+  version "2.6.12"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
+  integrity sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==
+
+vuedraggable@^2.24.3:
+  version "2.24.3"
+  resolved "https://registry.yarnpkg.com/vuedraggable/-/vuedraggable-2.24.3.tgz#43c93849b746a24ce503e123d5b259c701ba0d19"
+  integrity sha512-6/HDXi92GzB+Hcs9fC6PAAozK1RLt1ewPTLjK0anTYguXLAeySDmcnqE8IC0xa7shvSzRjQXq3/+dsZ7ETGF3g==
+  dependencies:
+    sortablejs "1.10.2"
 
 vuetrend@^0.3.4:
   version "0.3.4"

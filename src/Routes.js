@@ -26,6 +26,7 @@ import ChartsPage from '@/pages/Charts/Charts';
 import IconsPage from '@/pages/Icons/Icons';
 import NotificationsPage from '@/pages/Notifications/Notifications';
 
+import LcgNewsGroup from '@/pages/LcgNewsGroup/NewsGroup';
 
 Vue.use(Router);
 
@@ -55,6 +56,11 @@ export default new Router({
                     path: 'user',
                     name: 'UserPage',
                     component: LcgUserPage,
+                },
+                {
+                    path: 'newsgroup',
+                    name: 'LcgNewsGroup',
+                    component: LcgNewsGroup,
                 }
             ],
         },

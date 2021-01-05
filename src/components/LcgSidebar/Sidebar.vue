@@ -30,6 +30,14 @@
             index="user"
             isHeader
         />
+        <NavLink
+            :activeItem="activeItem"
+            header="NewsGroup"
+            link="/newsgroup"
+            iconName="flaticon-equal-1"
+            index="newsgroup"
+            isHeader
+        />
       </ul>
     </nav>
   </div>
